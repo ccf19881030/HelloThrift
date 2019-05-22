@@ -1,0 +1,37 @@
+Thrift RPC开发步骤
+安装好thrift后，就可以开始开发了。开发过程分这么几步：
+
+第1步： 写.thrift文件，也就是接口描述文件（Interface Description File）；
+
+第2步： 用Thrift compiler for Windows (thrift-0.9.1.exe) ，生成目标语言代码；
+
+第3步： 服务器端程序引入thrift生成的代码，实现RPC业务代码。
+
+第4步： 客户端引入代码，调用远程服务。
+
+ 
+thrift-0.12.0.exe是从官网下载的一个文件——“IDL翻译工具”，帮助你把.thrift文件“翻译”成目标语言的RPC代码。
+
+thrift命令支持多种语言，如cpp、java、python、c#、php、javascript等。
+
+(1)、编写Hello.thrift文件
+
+# Hello.thrift
+namespace cpp Demo
+service Hello{
+	string helloString(1:string para)
+	i32 helloInt(1:i32 para)
+	bool helloBoolean(1:bool para)
+	void helloVoid()
+	string helloNull()
+}
+
+
+(2)、把官网下载到的文件thrift-0.12.0.exe和Hello.thrift放到一个目录（hello）下。
+
+打开cmd命令行窗口，进入到这个目录，执行命令：
+
+C:\Users\admin\Desktop\Hello>thrift-0.12.0.exe  --gen  cpp  hello.thrift
+
+执行成功，在hello目录下，生成一个gen-cpp文件夹。
+进入Hello.thrift所在目录，
