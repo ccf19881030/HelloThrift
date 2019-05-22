@@ -22,14 +22,14 @@ public:
 
 	void helloString(std::string& _return, const std::string& para) {
 		// Your implementation goes here
-		printf("ÊÕµ½¿Í»§¶Ë·¢ËÍµÄ×Ö·û´®£º%s\n", para.c_str());
+		printf("æ”¶åˆ°å®¢æˆ·ç«¯å‘é€çš„å­—ç¬¦ä¸²ï¼š%s\n", para.c_str());
 		_return = "hello from Server!";
 	}
 
 	int32_t helloInt(const int32_t para) {
 		// Your implementation goes here
 		//printf("helloInt\n");
-		printf("ÊÕµ½¿Í»§¶Ë·¢ËÍµÄÊı×Ö£º%d\n", para);
+		printf("æ”¶åˆ°å®¢æˆ·ç«¯å‘é€çš„æ•°å­—ï¼š%d\n", para);
 
 		return para * 100;
 	}
